@@ -1,0 +1,43 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Chrome:Storybook",
+			"url": "http://localhost:6006",
+			"sourceMap": true,
+			"webRoot": "${workspaceFolder}",
+			"sourceMapPathOverrides": {
+				"webpack:///*": "${webRoot}/*",
+				"webpack:///./*": "${webRoot}/*",
+				"webpack:///src/*": "${webRoot}/*",
+				"webpack://{package-name}/*": "${webRoot}/*",
+				"webpack:///./~/*": "${webRoot}/node_modules/*"
+			}
+		},
+		{
+			"type": "firefox",
+			"request": "launch",
+			"name": "Firefox:Storybook",
+			"url": "http://localhost:6006",
+			"sourceMap": true,
+			"webRoot": "${workspaceFolder}",
+			"sourceMapPathOverrides": {
+				"webpack:///*": "${webRoot}/*",
+				"webpack:///./*": "${webRoot}/*",
+				"webpack:///src/*": "${webRoot}/*",
+				"webpack:///./~/*": "${webRoot}/node_modules/*"
+			},
+			"pathMappings": [
+				{
+					"url": "webpack://{package-name}/src",
+					"path": "${workspaceFolder}/src"
+				}
+			]
+		}
+	]
+}

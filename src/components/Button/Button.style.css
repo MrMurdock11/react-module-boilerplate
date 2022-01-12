@@ -1,0 +1,119 @@
+/* COMMON */
+
+:root {
+	--primary-bg-color: #4183c4;
+	--primary-color: #fff;
+	--primary-hover: #3b7ebf;
+
+	--danger-bg-color: #d9544f;
+	--danger-color: #fff;
+	--danger-hover: #d34f4b;
+
+	--default-bg-color: #efefef;
+	--default-color: #020202;
+	--default-hover: #eaeaea;
+
+	--secondary-bg-color: #fff;
+	--secondary-color: #020202;
+	--secondary-hover: #fafafa;
+
+	--disabled-bg-color: #e6e6e6;
+	--disabled-color: #7f7f7f;
+}
+
+.button {
+	display: flex;
+
+	align-items: center;
+
+	padding: 0 10px;
+
+	border-radius: 4px;
+	border: none;
+	box-sizing: border-box;
+
+	transition: background ease-in-out 120ms;
+
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+.button:not(:disabled):active {
+	box-shadow: inset 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* DISABLED */
+
+.button:disabled {
+	color: var(--disabled-color);
+	background-color: var(--disabled-bg-color);
+
+	cursor: default;
+}
+
+/* TYPE */
+
+.primary {
+	color: var(--primary-color);
+	background-color: var(--primary-bg-color);
+}
+
+.primary:not(:disabled):hover {
+	background-color: var(--primary-hover);
+}
+
+.danger {
+	color: var(--danger-color);
+	background-color: var(--danger-bg-color);
+}
+
+.danger:not(:disabled):hover {
+	background-color: var(--danger-hover);
+}
+
+.default {
+	color: var(--default-color);
+	background-color: var(--default-bg-color);
+}
+
+.default:not(:disabled):hover {
+	background-color: var(--default-hover);
+}
+
+.secondary {
+	color: var(--secondary-color);
+	background-color: var(--secondary-bg-color);
+}
+
+.secondary:not(:disabled):hover {
+	background-color: var(--secondary-hover);
+}
+
+/* SIZE */
+
+.small {
+	height: 30px;
+	font-size: 13px;
+}
+
+.medium {
+	height: 36px;
+	font-size: 13px;
+}
+
+.large {
+	height: 42px;
+	font-size: 15px;
+}
+
+/* OTHERS */
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.fluid {
+	width: 100%;
+	justify-content: center;
+}

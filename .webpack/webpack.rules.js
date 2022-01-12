@@ -1,0 +1,30 @@
+module.exports = [
+	{
+		test: /\.(ts|tsx|js)$/,
+		exclude: /node_modules/,
+		use: ["babel-loader"],
+	},
+	{
+		test: /\.style.css$/,
+		use: [
+			"style-loader",
+			"@teamsupercell/typings-for-css-modules-loader",
+			{
+				loader: "css-loader",
+				options: {
+					modules: {
+						localIdentName: "[folder]_[local]__[hash:base64:5]",
+						exportLocalsConvention: "camelCaseOnly",
+					},
+				},
+			},
+		],
+	},
+	{
+		test: /\.(png|jpg|gif|svg|jpeg)$/,
+		loader: "file-loader",
+		options: {
+			name: "[name].[ext]",
+		},
+	},
+];
